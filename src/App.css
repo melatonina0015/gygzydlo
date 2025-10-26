@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-melange);
+    font-family: var(--font-vt323);
+    color: var(--color-yellow);
+  }
+}
+
+@layer components {
+  li {
+    text-transform: uppercase;
+  }
+
+  li:hover {
+    text-decoration: underline;
+  }
+}
+
+@theme {
+  --color-melange: #26201E;
+  --color-yellow: #A69E32;
+
+  --font-vt323: "VT323", Inconsolata, monospace;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("public/fonts/VT323-Regular.ttf") format("ttf"),
+  url("public/fonts/VT323-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}

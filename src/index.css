@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --melange: #26201E;
+}
