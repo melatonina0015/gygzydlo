@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 const Navbar = () => {
-    const [time, setTime] = useState()
+    const [time, setTime] = useState("")
 
     useEffect(() => {
         const interval = setInterval(() => {

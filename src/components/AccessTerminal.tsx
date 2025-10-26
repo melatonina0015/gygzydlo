@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 const ACCESS_CODE = 'haslo_page';
 
-const AccessTerminal = ({onFinished}) => {
+const AccessTerminal = ({onFinished } : {onFinished: () => void}) => () => {
     const [accessGranted, setAccessGranted] = useState(false)
     const [accessCode, setAccessCode] = useState('')
     const [dots, setDots] = useState("");
