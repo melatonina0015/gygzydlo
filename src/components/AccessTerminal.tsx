@@ -1,10 +1,14 @@
 import {useEffect, useState} from "react";
 
+type AccessTerminalProps = {
+    onFinished: () => void;
+};
+
 const ACCESS_CODE = 'haslo_page';
 
-const AccessTerminal = ({onFinished } : {onFinished: () => void}) => () => {
-    const [accessGranted, setAccessGranted] = useState(false)
-    const [accessCode, setAccessCode] = useState('')
+const AccessTerminal = ({ onFinished } : AccessTerminalProps ) => {
+    const [accessGranted, setAccessGranted] = useState(false);
+    const [accessCode, setAccessCode] = useState('');
     const [dots, setDots] = useState("");
 
     useEffect(() => {
@@ -22,7 +26,7 @@ const AccessTerminal = ({onFinished } : {onFinished: () => void}) => () => {
             clearInterval(interval);
             clearTimeout(timeout);
         };
-    }, [accessGranted])
+    }, [accessGranted, onFinished]);
 
     const grantAccess = () => {
         if (accessCode === ACCESS_CODE) {
