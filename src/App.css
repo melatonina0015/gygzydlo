@@ -11,12 +11,16 @@
 }
 
 @layer components {
-  li {
+  ul {
     text-transform: uppercase;
   }
 
-  li:hover {
+  ul li:hover {
     text-decoration: underline;
+  }
+
+  ol li {
+    padding-bottom: 20px;
   }
 }
 

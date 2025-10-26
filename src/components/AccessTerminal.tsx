@@ -35,7 +35,7 @@ const AccessTerminal = ({ onFinished } : AccessTerminalProps ) => {
     }
 
     return (
-        <div className='h-screen flex justify-center items-center'>
+        <div className='h-full flex justify-center items-center'>
             <div className='flex flex-col gap-[20px]'>
                 <p>
                     ACCESS TERMINAL v1.04 <br/>

@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 const Navbar = () => {
     const [time, setTime] = useState("")
+    const [ip, setIp] = useState("")
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -11,17 +12,29 @@ const Navbar = () => {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        getIP();
+    }, []);
+
+    async function getIP() {
+        try {
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            setIp(data.ip);
+        } catch (error) {
+            console.error('Error fetching IP address:', error);
+        }
+    }
+
     const getTimestamp = () => {
         const now = new Date();
-
-        //return now.toISOString().replace("T", " ").slice(0, 19);
         return now.toLocaleString('pl-PL');
     }
     
     return (
         <div className="flex justify-between">
             <div>
-                <p>[Timestamp: {time} | Host: node-03]</p>
+                <p>[Timestamp: {time} | Host: {ip}]</p>
             </div>
             <div>
                 <ul className="flex gap-[66px]">
