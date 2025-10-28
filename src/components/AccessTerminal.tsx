@@ -46,9 +46,9 @@ const AccessTerminal = ({ onFinished } : AccessTerminalProps ) => {
                     <input type="text" value={accessCode} onChange={(e) => setAccessCode(e.target.value)} />
                 </div>
                 { !accessGranted &&
-                <div className='flex gap-[33px] pt-20 justify-center'>
-                    <button className='uppercase border p-[5px] hover:border-white hover:text-white'>Terminate</button>
-                    <button className='uppercase border p-[5px] hover:border-white hover:text-white' onClick={grantAccess}>Enter</button>
+                <div className='pt-20 btn-same-width'>
+                    <button>Terminate</button>
+                    <button onClick={grantAccess}>Enter</button>
                 </div>
                 }
 
