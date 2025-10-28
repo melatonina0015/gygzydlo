@@ -4,9 +4,9 @@
   :root {
     padding: 0;
     margin: 0;
-    background-color: var(--color-melange);
+    background-color: var(--color-mermaid-bottom);
     font-family: var(--font-vt323);
-    color: var(--color-yellow);
+    color: var(--color-pampa-grass-500);
   }
 }
 
@@ -17,24 +17,58 @@
 
   ul li:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 
   ol li {
     padding-bottom: 20px;
   }
+
+  button {
+    text-transform: uppercase;
+    border: 2px solid var(--color-pampa-grass-500);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    border-color: var(--color-pampa-grass-400);
+    color: var(--color-pampa-grass-400);
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .btn-same-width {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
 @theme {
-  --color-melange: #26201E;
-  --color-yellow: #A69E32;
+  --color-error-red: #FF3A3D;
+
+  --color-pampa-grass-300: #EDECD6;
+  --color-pampa-grass-400: #CAC584;
+  --color-pampa-grass-500: #A69E32;
+  --color-pampa-grass-600: #645F1E;
+
+  --color-hot-chocolate-300: #B0A39F;
+  --color-hot-chocolate-400: #827874;
+  --color-hot-chocolate-500: #26201E;
+  --color-hot-chocolate-600: #040303;
+
+  --color-mermaid-bottom: #101717;
 
   --font-vt323: "VT323", Inconsolata, monospace;
 }
 
 @font-face {
   font-family: "VT323";
-  src: url("public/fonts/VT323-Regular.ttf") format("ttf"),
-  url("public/fonts/VT323-Regular.ttf") format("ttf");
+  src: url("public/fonts/VT323-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

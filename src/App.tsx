@@ -8,7 +8,7 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="h-screen px-[100px] py-[30px]">
+    <div className="h-screen px-[25px] py-[30px] sm:px-[100px]">
         <Navbar />
         {
             !isLoaded ? (<AccessTerminal onFinished={() => setIsLoaded(true)}/>

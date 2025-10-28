@@ -32,15 +32,14 @@ const Navbar = () => {
     }
     
     return (
-        <div className="flex justify-between">
-            <div>
-                <p>[Timestamp: {time} | Host: {ip}]</p>
+        <div className="flex flex-col sm:flex-row justify-between items-center">
+            <div className='pb-5 sm:pb-0 self-start sm:self-auto'>
+                <p className='text-xs'>[Timestamp: {time} | Host: {ip}]</p>
             </div>
-            <div>
-                <ul className="flex gap-[66px]">
+            <div className="w-full sm:w-fit">
+                <ul className="flex text-base sm:text-[20px] gap-[10px] justify-between sm:gap-[40px] text-nowrap">
                     <li>Access</li>
-                    <li>Commands</li>
-                    <li>System Info</li>
+                    <li>System_Info</li>
                     <li>Security</li>
                     <li>Archive_Backup</li>
                 </ul>
