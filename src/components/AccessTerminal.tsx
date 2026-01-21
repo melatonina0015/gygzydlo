@@ -8,7 +8,6 @@ type AccessTerminalProps = {
 const AccessTerminal = ({ onAttempt } : AccessTerminalProps ) => {
     const [accessCode, setAccessCode] = useState('');
     const [dots, setDots] = useState("");
-    const [processing, setProcessing] = useState(false);
     const [status, setStatus] = useState<'IDLE' | 'VERIFYING' | 'SUCCESS' | 'FAIL'>('IDLE');
 
     useEffect(() => {
@@ -95,18 +94,6 @@ const AccessTerminal = ({ onAttempt } : AccessTerminalProps ) => {
                             {renderStatusMessage()}
                         </div>
                     )
-                }
-
-                { processing &&
-                    <>
-                        <p>
-                            Attempt logged: ID: a5f2c9 <br/>
-                            [SECURITY] Attempt flagged for review. You are being observed.
-                        </p>
-                        <p className='uppercase'>
-                            Access granted <span>{dots}</span>
-                        </p>
-                    </>
                 }
             </div>
         </div>

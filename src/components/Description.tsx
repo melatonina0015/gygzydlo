@@ -1,7 +1,4 @@
-const Description = () => {
-    const ReloadPage = () => {
-        window.location.reload();
-    }
+const Description = ({onBack}: {onBack: () => void}) => {
 
     return (
         <div className='h-full flex justify-center items-center'>
@@ -45,7 +42,7 @@ const Description = () => {
                     </div></li>
                 </ol>
                 <div className='flex justify-center'>
-                    <button onClick={ReloadPage}>Cofnij</button>
+                    <button onClick={onBack}>Cofnij</button>
                 </div>
             </div>
         </div>

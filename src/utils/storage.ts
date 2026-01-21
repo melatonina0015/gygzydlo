@@ -1,9 +1,9 @@
-export const setUnlockedCookie = (ids: number[]) => {
+export const setUnlockedCookie = (ids: string[]) => {
     const value = ids.join(',');
     document.cookie = `unlocked_entries=${value}; path=/; max-age=31536000`;
 };
 
-export const getUnlockedFromCookie = (): number[] => {
+export const getUnlockedFromCookie = (): string[] => {
     const cookies = document.cookie.split('; ');
     const unlockedCookie = cookies.find(row => row.startsWith('unlocked_entries='));
 
