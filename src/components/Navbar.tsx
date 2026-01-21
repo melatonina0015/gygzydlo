@@ -1,6 +1,12 @@
 import {useEffect, useState} from "react";
 
-const Navbar = () => {
+type ViewState = 'TERMINAL' | 'DESCRIPTION' | 'ACCESS';
+
+type NavbarProps = {
+    onNavigate: (view: ViewState) => void;
+};
+
+const Navbar = ({ onNavigate }: NavbarProps) => {
     const [time, setTime] = useState("")
     const [ip, setIp] = useState("")
 
@@ -38,8 +44,8 @@ const Navbar = () => {
             </div>
             <div className="w-full sm:w-fit">
                 <ul className="flex text-base sm:text-[20px] gap-[10px] justify-between sm:gap-[40px] text-nowrap">
-                    <li>Access</li>
-                    <li>System_Info</li>
+                    <li onClick={() => onNavigate('ACCESS')}>Access</li>
+                    <li onClick={() => onNavigate('DESCRIPTION')}>System_Info</li>
                     <li>Security</li>
                     <li>Archive_Backup</li>
                 </ul>
