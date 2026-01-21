@@ -12,5 +12,5 @@ export const getUnlockedFromCookie = (): string[] => {
     const value = unlockedCookie.split('=')[1];
     if (!value) return [];
 
-    return value.split(',').map(Number);
+    return value.split(',');
 };
