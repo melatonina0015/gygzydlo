@@ -21,7 +21,7 @@ const AccessPage = ({ unlockedIds, onBack }: AccessPageProps) => {
     }
 
     return (
-        <div className="h-full flex flex-col pt-32">
+        <div className="h-full flex flex-col pt-32 ">
             <div className="flex items-center gap-8">
                 <p>{buildPTag()}</p>
                 {!isUnlocked && <p className="text-[#FF3A3D]">ACCESS DENIED - CODE: A-400 - INPUT REQUIRED</p>}
@@ -37,7 +37,7 @@ const AccessPage = ({ unlockedIds, onBack }: AccessPageProps) => {
             </div>
             {isUnlocked && (
                 <div>
-                    <img src={`/assets/img/${currentEntry.image}`} className="w-full max-w-2xl" />
+                    <img src={`/assets/img/${currentEntry.image}`} className="w-full max-w-2xl mb-16" alt="entry"/>
                 </div>
             )}
         </div>
